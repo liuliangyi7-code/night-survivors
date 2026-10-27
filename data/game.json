@@ -1,0 +1,232 @@
+{
+  "screen": {
+    "width": 390,
+    "height": 700,
+    "fps": 60
+  },
+  "goal": {
+    "survive_seconds": 120.0
+  },
+  "hero": {
+    "speed": 120.0,
+    "max_hp": 100.0,
+    "hit_radius": 12.0,
+    "magnet_radius": 60.0,
+    "stop_distance": 12.0
+  },
+  "sprite": {
+    "size": 48,
+    "grow": 3
+  },
+  "spawning": {
+    "check_interval": 1.0,
+    "max_per_check": 8,
+    "ring_radius": 380.0,
+    "despawn_distance": 700.0,
+    "boss_return_distance": 600.0,
+    "max_alive": 120
+  },
+  "gems": {
+    "fly_speed": 300.0,
+    "pickup_radius": 14.0
+  },
+  "combat": {
+    "enemy_hit_cooldown": 0.5,
+    "spark_linger": 1.5
+  },
+  "xp": {
+    "first_level": 5,
+    "per_level": 3,
+    "cards": 3,
+    "heal_amount": 30.0
+  },
+  "max_weapons": 3,
+  "weapons": {
+    "spark_wand": {
+      "name": "Spark Wand",
+      "short": "Spark",
+      "text_first": "Shoots the nearest enemy",
+      "speed": 400.0,
+      "level1": {
+        "damage": 10.0,
+        "cooldown": 0.8,
+        "sparks": 1
+      },
+      "per_level": {
+        "damage": 3.0,
+        "cooldown": 0.08
+      },
+      "extra_spark_levels": [
+        3,
+        5
+      ],
+      "max_level": 5
+    },
+    "spin_blades": {
+      "name": "Spin Blades",
+      "short": "Blades",
+      "text_first": "Blades circle around you",
+      "orbit_radius": 60.0,
+      "turn_seconds": 1.5,
+      "hit_cooldown": 0.5,
+      "level1": {
+        "damage": 8.0,
+        "blades": 2
+      },
+      "per_level": {
+        "damage": 3.0
+      },
+      "extra_blade_levels": [
+        2,
+        4
+      ],
+      "max_level": 5
+    },
+    "holy_ring": {
+      "name": "Holy Ring",
+      "short": "Ring",
+      "text_first": "Hurts everything close to you",
+      "level1": {
+        "damage": 5.0,
+        "radius": 50.0,
+        "cooldown": 0.5
+      },
+      "per_level": {
+        "damage": 2.0,
+        "radius": 10.0
+      },
+      "max_level": 5
+    }
+  },
+  "items": {
+    "swift_boots": {
+      "name": "Swift Boots",
+      "short": "Boots",
+      "text": "+10% walking speed",
+      "speed_bonus": 0.1,
+      "max_level": 5
+    },
+    "big_heart": {
+      "name": "Big Heart",
+      "short": "Heart",
+      "text": "+20 max HP, heals 20",
+      "max_hp_bonus": 20.0,
+      "heal": 20.0,
+      "max_level": 5
+    },
+    "magnet": {
+      "name": "Magnet",
+      "short": "Magnet",
+      "text": "+30 px gem magnet radius",
+      "magnet_bonus": 30.0,
+      "max_level": 5
+    }
+  },
+  "enemies": {
+    "bat": {
+      "name": "Bat",
+      "hp": 8.0,
+      "speed": 100.0,
+      "damage": 5.0,
+      "xp": 1,
+      "hit_radius": 11.0,
+      "sprite": "bat",
+      "scale": 1.0
+    },
+    "slime": {
+      "name": "Slime",
+      "hp": 30.0,
+      "speed": 55.0,
+      "damage": 8.0,
+      "xp": 2,
+      "hit_radius": 12.0,
+      "sprite": "slime",
+      "scale": 1.0
+    },
+    "ghost": {
+      "name": "Ghost",
+      "hp": 15.0,
+      "speed": 135.0,
+      "damage": 6.0,
+      "xp": 2,
+      "hit_radius": 11.0,
+      "sprite": "ghost",
+      "scale": 1.0
+    },
+    "demon": {
+      "name": "Demon",
+      "hp": 800.0,
+      "speed": 85.0,
+      "damage": 20.0,
+      "xp": 0,
+      "hit_radius": 26.0,
+      "sprite": "demon",
+      "scale": 2.0
+    }
+  },
+  "waves": [
+    {
+      "from": 0,
+      "types": [
+        "bat"
+      ],
+      "minimum": 12
+    },
+    {
+      "from": 15,
+      "types": [
+        "bat"
+      ],
+      "minimum": 20
+    },
+    {
+      "from": 30,
+      "types": [
+        "bat",
+        "slime"
+      ],
+      "minimum": 28
+    },
+    {
+      "from": 45,
+      "types": [
+        "slime",
+        "ghost"
+      ],
+      "minimum": 36
+    },
+    {
+      "from": 60,
+      "types": [
+        "bat",
+        "ghost"
+      ],
+      "minimum": 45
+    },
+    {
+      "from": 75,
+      "types": [
+        "bat",
+        "slime",
+        "ghost"
+      ],
+      "minimum": 55
+    },
+    {
+      "from": 90,
+      "types": [
+        "bat",
+        "slime"
+      ],
+      "minimum": 55,
+      "boss": true
+    },
+    {
+      "from": 105,
+      "types": [
+        "bat"
+      ],
+      "minimum": 75
+    }
+  ]
+}

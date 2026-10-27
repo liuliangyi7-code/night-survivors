@@ -1,0 +1,5 @@
+# Build output and Python cache - these are made again, never saved.
+build/
+__pycache__/
+*.py[cod]
+.DS_Store
